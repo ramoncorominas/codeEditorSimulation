@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Code Editor Simulation with delayed Audio Cues and Accessibility Alerts
+    </title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+    <h1>
+        Code Editor Simulation with Delayed Audio Cues and Accessibility Alerts
+    </h1>
+
+    <button>dummy</button>
+
+    <label for="code-editor-1">Code editor</label>
+    <textarea readonly name="code" id="code-editor-1" cols="50" rows="15"></textarea>
+
+    <button>dummy</button>
+
+    <p id="notifier" aria-live="polite" role="status"></p>
+
+    <script type="module">
+        import { testCode, testSegments } from './js/testData.js';
+        import { CodeEditor } from './js/CodeEditor.js';
+
+        const editor1 = new CodeEditor('code-editor-1');
+        editor1.setContent(testCode);
+        editor1.setFeatureSegments(testSegments)
+
+    </script>
+</body>
+
+</html>
